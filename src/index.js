@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express();
 require('dotenv').config()
-const connectDb = require("./config/db")
+const connectDb = require("./config/db");
+const cookieParser = require('cookie-parser');
 
+
+app.use(express.json());
+app.use(cookieParser());
 
 async function startServer(){
     try {
